@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "eslint": "^10.13.0",
+    "html-server": "^0.1.1",
+    "mocha": "^12.0.3",
+    "webpack": "^5.112.2"
+  },
+  "scripts": {
+    "build": "npx webpack --config webpack.config.js",
+    "debug": "npx webpack --config webpack.config.js && npx http-server -c-1 ./dev -o",
+    "test": "mocha --recursive",
+    "deploy": "npx webpack --config webpack.config.js && node ./deploy.js"
+  },
+  "devDependencies": {
+    "webpack-cli": "^7.2.3"
+  }
+}
