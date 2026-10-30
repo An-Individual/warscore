@@ -22,7 +22,7 @@ html, body {
     justify-content: space-between;
     align-items: stretch;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0 1px;
 }
 
 .container-block {
@@ -54,7 +54,24 @@ html, body {
     border-style: solid;
     border-width: 2px;
     margin: 0 0.4rem;
+    width: 2rem;
+}
+
+.score-perround-title {
     padding: 0.2rem;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    font-size: 0.7rem;
+}
+
+.score-perround-value {
+    padding: 0.2rem;
+    font-size: 0.5rem;
+}
+
+.round-selected {
+    background-color: black;
+    color: white;
 }
 
 #score-totals-box {
