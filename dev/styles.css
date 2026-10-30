@@ -1,0 +1,136 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 18px;
+}
+
+.body-block {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.container-block {
+    clear: both;
+}
+
+#top-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#score-overall {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+
+#score-perround {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.score-perround-box {
+    border-style: solid;
+    border-width: 2px;
+    margin: 0 0.4rem;
+    padding: 0.2rem;
+}
+
+#score-totals-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.round-score-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.round-score-sidebox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 2em;
+}
+
+.round-score-mainbox {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    border-style: solid;
+    border-width: 0 1px;
+}
+
+.round-score-type-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.side-box-title {
+    writing-mode: vertical-lr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-selector-button {
+    flex-grow: 1;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-score-type-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.round-score-adjuster-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}

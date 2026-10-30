@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>War Score</title>
+        <title>War Simple</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="apple-mobile-web-app-title" content="War Score">
+        <meta name="apple-mobile-web-app-title" content="War Simple">
         <meta name="description" content="A simple score tracker for Warhammer 40k 11th Edition.">
 
-		<meta property="og:title" content="War Score">
+		<meta property="og:title" content="War Simple">
 		<meta property="og:description" content="A simple score tracker for Warhammer 40k 11th Edition.">
 		<meta property="og:url" content="https://an-individual.github.io/warscore">
 		<meta property="og:image" content="https://an-individual.github.io/warscore/images/socialcard.png">
@@ -18,6 +18,95 @@
         <script src="warscore.js"></script>
     </head>
     <body>
-
+        <div class="body-block">
+            <div class="container-block" id="top-menu">
+                <div class="menu-button" id="button-settings">Settings</div>
+                <div class="menu-title">War Simple</div>
+                <div class="menu-button" id="button-newgame">New Game</div>
+            </div>
+            <div class="container-block" id="score-overall">
+                <div id="score-perround">
+                    <div class="score-perround-box">
+                        <div class="round-score-title">1</div>
+                        <div class="round-score-value" id="score-round-one">+0</div>
+                    </div>
+                    <div class="score-perround-box">
+                        <div class="round-score-title">2</div>
+                        <div class="round-score-value" id="score-round-two">+0</div>
+                    </div>
+                    <div class="score-perround-box">
+                        <div class="round-score-title">3</div>
+                        <div class="round-score-value" id="score-round-three">+0</div>
+                    </div>
+                    <div class="score-perround-box">
+                        <div class="round-score-title">4</div>
+                        <div class="round-score-value" id="score-round-four">+0</div>
+                    </div>
+                    <div class="score-perround-box">
+                        <div class="round-score-title">5</div>
+                        <div class="round-score-value" id="score-round-five">+0</div>
+                    </div>
+                    <div class="score-perround-box">
+                        <div class="round-score-title">E</div>
+                        <div class="round-score-value" id="score-round-end">+0</div>
+                    </div>
+                </div>
+                <div id="score-totals-box">
+                    <div class="total-box total-side-box">
+                        <div class="total-side-box-title">Primary</div>
+                        <div class="total-side-box-value" id="score-total-primary">0</div>
+                        <div class="total-side-box-maximum" id="score-total-primary-maximum">Maximum</div>
+                    </div>
+                    <div class="total-box total-main-box">
+                        <div class="total-main-box-title">Total</div>
+                        <div class="total-main-box-value" id="score-total-value">0</div>
+                        <div class="total-side-box-maximum" id="score-total-maximum">Maximum</div>
+                    </div>
+                    <div class="total-box total-side-box">
+                        <div class="total-side-box-title">Secondary</div>
+                        <div class="total-side-box-value" id="score-total-secondary">0</div>
+                        <div class="total-side-box-maximum" id="score-total-secondary-maximum">Maximum</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block round-score-box">
+                <div class="round-score-sidebox">
+                    <div class="side-box-title">Round</div>
+                    <div class="round-selector-button" id="button-select-round-one">1</div>
+                    <div class="round-selector-button" id="button-select-round-two">2</div>
+                    <div class="round-selector-button" id="button-select-round-three">3</div>
+                    <div class="round-selector-button" id="button-select-round-four">4</div>
+                    <div class="round-selector-button" id="button-select-round-five">5</div>
+                    <div class="round-selector-button" id="button-select-round-end">E</div>
+                </div>
+                <div class="round-score-mainbox">
+                    <div id="round-title">Round 1</div>
+                    <div class="round-score-type-box">
+                        <div class="round-score-title">Primary</div>
+                        <div class="round-score-adjuster-box" id="round-score-adjuster-box-primary">
+                            <div class="round-score-adjuster-button" id="button-primarydown">&#60;</div>
+                            <div class=""round-score-adjuster-current" id="current-primary-value">0</div>
+                            <div class="round-score-adjuster-button" id="button-primaryup">&#62;</div>
+                        </div>
+                        <div class="round-score-maximum" id="round-score-maximum-primary">Maximum</div>
+                    </div>
+                    <div class="round-score-type-box">
+                        <div class="round-score-title">Secondary</div>
+                        <div class="round-score-adjuster-box" id="round-score-adjuster-box-secondary">
+                            <div class="round-score-adjuster-button" id="button-secondarydown">&#60;</div>
+                            <div class=""round-score-adjuster-current" id="current-secondary-value">0</div>
+                            <div class="round-score-adjuster-button" id="button-secondaryup">&#62;</div>
+                        </div>
+                        <div class="round-score-maximum" id="round-score-maximum-secondary">Maximum</div>
+                    </div>
+                </div>
+                <div class="round-score-sidebox">
+                    <div class="side-box-title">CP</div>
+                    <div id="button-cp-up">^</div>
+                    <div id="cp-value">80</div>
+                    <div id="button-cp-down">V</div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
