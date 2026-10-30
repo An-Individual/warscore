@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 export default {
   entry: "./src/initialize.js",
   output: {
-    filename: "warscore.js",
+    filename: "warsimple.js",
     path: path.resolve(__dirname, "dev"),
   },
   mode: "production",
