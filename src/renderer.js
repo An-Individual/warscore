@@ -122,6 +122,12 @@ export class Renderer {
             selectedRound = data.currentRound;
         }
 
+        if(selectedRound < 6) {
+            ElementCatalog.roundTitleElem.textContent = `Round ${selectedRound}`;
+        } else {
+            ElementCatalog.roundTitleElem.textContent = `End Game`;
+        }
+
         let primary = 0;
         let secondary = 0;
         if(data.rounds && data.rounds[selectedRound]) {

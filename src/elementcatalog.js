@@ -7,6 +7,8 @@ export class ElementCatalog {
             return;
         }
 
+        ElementCatalog.roundTitleElem = document.getElementById("round-title");
+
         ElementCatalog.roundSideElems = [];
         ElementCatalog.roundSideElems[1] = document.getElementById("button-select-round-one");
         ElementCatalog.roundSideElems[2] = document.getElementById("button-select-round-two");
