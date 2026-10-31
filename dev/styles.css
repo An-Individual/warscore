@@ -26,6 +26,12 @@ html, body {
     border-width: 0 1px;
 }
 
+@media screen and (max-width: 600px) {
+    .body-block {
+        border-width: 0px;
+    }
+}
+
 .container-block {
     clear: both;
 }
