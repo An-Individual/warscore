@@ -73,17 +73,23 @@
                     <div class="total-box total-side-box">
                         <div class="total-side-box-title">Primary</div>
                         <div class="total-side-box-value" id="score-total-primary">0</div>
-                        <div class="total-side-box-maximum" id="score-total-primary-maximum">Maximum</div>
+                        <div class="total-side-box-maximum" id="score-total-primary-maximum">
+                            <div>Maximum</div>
+                        </div>
                     </div>
                     <div class="total-box total-main-box">
                         <div class="total-main-box-title">Total</div>
                         <div class="total-main-box-value" id="score-total-value">0</div>
-                        <div class="total-side-box-maximum" id="score-total-maximum">Maximum</div>
+                        <div class="total-main-box-maximum" id="score-total-maximum">
+                            <div>Maximum</div>
+                        </div>
                     </div>
                     <div class="total-box total-side-box">
                         <div class="total-side-box-title">Secondary</div>
                         <div class="total-side-box-value" id="score-total-secondary">0</div>
-                        <div class="total-side-box-maximum" id="score-total-secondary-maximum">Maximum</div>
+                        <div class="total-side-box-maximum" id="score-total-secondary-maximum">
+                            <div>Maximum</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,27 +108,49 @@
                     <div class="round-score-type-box">
                         <div class="round-score-title">Primary</div>
                         <div class="round-score-adjuster-box" id="round-score-adjuster-box-primary">
-                            <div class="round-score-adjuster-button" id="button-primarydown">&#60;</div>
-                            <div class=""round-score-adjuster-current" id="current-primary-value">0</div>
-                            <div class="round-score-adjuster-button" id="button-primaryup">&#62;</div>
+                            <div class="round-score-decrement-button" id="button-primarydown">
+                                <img src="images/arrow.svg">
+                            </div>
+                            <div class="round-score-adjuster-current">
+                                <div id="current-primary-value">0</div>
+                            </div>
+                            <div class="round-score-increment-button" id="button-primaryup">
+                                <img src="images/arrow.svg">
+                            </div>
                         </div>
-                        <div class="round-score-maximum" id="round-score-maximum-primary">Maximum</div>
+                        <div class="round-score-maximum" id="round-score-maximum-primary">
+                            <div>Maximum</div>
+                        </div>
                     </div>
                     <div class="round-score-type-box">
                         <div class="round-score-title">Secondary</div>
                         <div class="round-score-adjuster-box" id="round-score-adjuster-box-secondary">
-                            <div class="round-score-adjuster-button" id="button-secondarydown">&#60;</div>
-                            <div class=""round-score-adjuster-current" id="current-secondary-value">0</div>
-                            <div class="round-score-adjuster-button" id="button-secondaryup">&#62;</div>
+                            <div class="round-score-decrement-button" id="button-secondarydown">
+                                <img src="images/arrow.svg">
+                            </div>
+                            <div class="round-score-adjuster-current">
+                                <div id="current-secondary-value">0</div>
+                            </div>
+                            <div class="round-score-increment-button" id="button-secondaryup">
+                                <img src="images/arrow.svg">
+                            </div>
                         </div>
-                        <div class="round-score-maximum" id="round-score-maximum-secondary">Maximum</div>
+                        <div class="round-score-maximum" id="round-score-maximum-secondary">
+                            <div>Maximum</div>
+                        </div>
                     </div>
                 </div>
                 <div class="round-score-sidebox">
                     <div class="side-box-title">CP</div>
-                    <div id="button-cp-up">^</div>
-                    <div id="cp-value">80</div>
-                    <div id="button-cp-down">V</div>
+                    <div id="cp-controller">
+                        <div id="button-cp-up">
+                            <img src="images/arrow-vert.svg">
+                        </div>
+                        <div id="cp-value">0</div>
+                        <div id="button-cp-down">
+                            <img src="images/arrow-vert.svg">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

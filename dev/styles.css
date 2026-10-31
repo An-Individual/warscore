@@ -1,3 +1,9 @@
+:root {
+    --backcol: #131c16;
+    --forecol: #a0b38e;
+    --forecolfilter: invert(73%) sepia(13%) saturate(538%) hue-rotate(48deg) brightness(94%) contrast(88%);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -8,9 +14,12 @@ html, body {
     height: 100%;
     text-align: center;
     vertical-align: center;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: monospace;
     font-size: 18px;
     user-select: none;
+    background-color: var(--backcol);
+    border-color: var(--forecol);
+    color: var(--forecol);
 }
 
 .body-block {
@@ -41,7 +50,16 @@ html, body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+}
+
+.menu-button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    cursor: pointer;
 }
 
 #score-overall {
@@ -55,6 +73,8 @@ html, body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: stretch;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .score-perround-box {
@@ -78,8 +98,8 @@ html, body {
 }
 
 .round-selected {
-    background-color: black;
-    color: white;
+    background-color: var(--forecol);
+    color: var(--backcol);
 }
 
 #score-totals-box {
@@ -87,7 +107,60 @@ html, body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.total-side-box {
+    width: 4rem;
+}
+
+.total-side-box .total-side-box-title {
+    font-size: 0.7rem;
+}
+
+.total-side-box .total-side-box-value {
+    font-size: 1.5rem;
+}
+
+.total-side-box .total-side-box-maximum {
+    font-size: 0.5rem;
+}
+
+.total-main-box {
+    margin: 0 1rem;
+}
+
+.total-main-box .total-main-box-title {
+    font-size: 1.5rem;
+}
+
+.total-main-box .total-main-box-value {
+    font-size: 3rem;
+}
+
+.total-main-box .total-main-box-maximum {
+    font-size: 1rem;
+}
+
+.total-side-box-maximum div, .total-main-box-maximum div, .round-score-maximum div {
+    background-color: var(--forecol);
+    color: var(--backcol);
+    opacity: 0;
+}
+
+.total-side-box-maximum, .total-main-box-maximum, .round-score-maximum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-main-box-maximum div, .round-score-maximum div {
+    padding: 0 0.15rem;
+}
+
+.total-side-box-maximum div {
+    padding: 0 0.1rem;
 }
 
 .round-score-box {
@@ -105,7 +178,8 @@ html, body {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
-    width: 2em;
+    width: 12%;
+    font-size: 1.5rem;
 }
 
 .round-score-mainbox {
@@ -117,6 +191,11 @@ html, body {
     align-items: stretch;
     border-style: solid;
     border-width: 0 1px;
+}
+
+#round-title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
 }
 
 .round-score-type-box {
@@ -133,6 +212,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 5rem;
 }
 
 .round-selector-button {
@@ -159,4 +239,71 @@ html, body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: stretch;
+    cursor: pointer;
+    margin: 0 5%;
+}
+
+.round-score-adjuster-current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    container-type: inline-size;
+    resize: both;
+    width: 50%;
+}
+
+.round-score-adjuster-current div {
+    font-size: 110cqw;
+    line-height: 1;
+    display: inline-flex;
+}
+
+.round-score-decrement-button,
+.round-score-increment-button {
+    width: 15%
+}
+
+.round-score-decrement-button img {
+    filter: var(--forecolfilter);
+    width: 100%;
+    height: 100%;
+}
+
+.round-score-increment-button img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: var(--forecolfilter);
+    width: 100%;
+    height: 100%;
+}
+
+#cp-controller {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+#button-cp-up, #button-cp-down {
+    aspect-ratio: 0.5;
+    width: 75%
+}
+
+#button-cp-up img {
+    filter: var(--forecolfilter);
+    width: 100%;
+    height: 100%;
+}
+
+#button-cp-down img {
+    filter: var(--forecolfilter);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    width: 100%;
+    height: 100%;
 }
