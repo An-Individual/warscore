@@ -11,7 +11,7 @@ export class ScoreManager {
     static data = {};
 
     static Initialize() {
-        this.data = DataManager.LoadData();
+        ScoreManager.data = DataManager.LoadData();
     }
 
     static SetRound(r) {
@@ -19,73 +19,73 @@ export class ScoreManager {
             return false;
         }
 
-        this.EnsureData();
-        this.data.currentRound = r;
-        this.NotifyListeners();
+        ScoreManager.EnsureData();
+        ScoreManager.data.currentRound = r;
+        ScoreManager.NotifyListeners();
         return true;
     }
 
     static IncrementCP(value) {
-        this.EnsureCP();
-        this.data.cp += value;
-        if(this.LimitsExceeded()) {
-            this.data.cp -= value;
+        ScoreManager.EnsureCP();
+        ScoreManager.data.cp += value;
+        if(ScoreManager.LimitsExceeded()) {
+            ScoreManager.data.cp -= value;
             return false;
         } else {
-            this.NotifyListeners();
+            ScoreManager.NotifyListeners();
             return true;
         }
     }
 
     static IncrementPrimary(value) {
-        let round = this.data?.currentRound ?? 1
-        this.EnsureRound(round);
-        this.data.rounds[round].primary += value;
-        if(this.LimitsExceeded()) {
-            this.data.rounds[round].primary -= value;
+        let round = ScoreManager.data?.currentRound ?? 1
+        ScoreManager.EnsureRound(round);
+        ScoreManager.data.rounds[round].primary += value;
+        if(ScoreManager.LimitsExceeded()) {
+            ScoreManager.data.rounds[round].primary -= value;
             return false;
         } else {
-            this.NotifyListeners();
+            ScoreManager.NotifyListeners();
             return true;
         }
     }
 
     static IncrementSecondary(value) {
-        let round = this.data?.currentRound ?? 1
-        this.EnsureRound(round);
-        this.data.rounds[round].secondary += value;
-        if(this.LimitsExceeded()) {
-            this.data.rounds[round].secondary -= value;
+        let round = ScoreManager.data?.currentRound ?? 1
+        ScoreManager.EnsureRound(round);
+        ScoreManager.data.rounds[round].secondary += value;
+        if(ScoreManager.LimitsExceeded()) {
+            ScoreManager.data.rounds[round].secondary -= value;
             return false;
         } else {
-            this.NotifyListeners();
+            ScoreManager.NotifyListeners();
             return true;
         }
     }
 
     static LimitsExceeded() {
-        if(this.data?.cp && this.data.cp < 0) {
+        if(ScoreManager.data?.cp && ScoreManager.data.cp < 0) {
             return true;
         }
 
-        if(!this.data?.rounds) {
+        if(!ScoreManager.data?.rounds) {
             return false;
         }
 
         let primaryTotal = 0;
         let secondaryTotal = 0;
-        for(let round in this.data.rounds) {
-            if(this.data.rounds[round].primary < 0) {
+        for(let round in ScoreManager.data.rounds) {
+            if(ScoreManager.data.rounds[round].primary < 0) {
                 return true;
-            } else if (this.data.rounds[round].primary > 15) {
+            } else if (ScoreManager.data.rounds[round].primary > 15) {
                 return true;
-            } else if (this.data.rounds[round].secondary < 0) {
+            } else if (ScoreManager.data.rounds[round].secondary < 0) {
                 return true;
-            } else if (this.data.rounds[round].secondary > 15) {
+            } else if (ScoreManager.data.rounds[round].secondary > 15) {
                 return true;
             }
-            primaryTotal += this.data.rounds[round].primary;
-            secondaryTotal += this.data.rounds[round].secondary;
+            primaryTotal += ScoreManager.data.rounds[round].primary;
+            secondaryTotal += ScoreManager.data.rounds[round].secondary;
             if(primaryTotal > 45 || secondaryTotal > 45) {
                 return true;
             }
@@ -95,60 +95,60 @@ export class ScoreManager {
     }
 
     static EnsureData() {
-        if(!this.data) {
-            this.data = {};
+        if(!ScoreManager.data) {
+            ScoreManager.data = {};
         }
     }
 
     static EnsureRound(r) {
-        this.EnsureData();
+        ScoreManager.EnsureData();
 
-        if(!this.data.rounds) {
-            this.data.rounds = [];
+        if(!ScoreManager.data.rounds) {
+            ScoreManager.data.rounds = [];
         }
 
-        if(!this.data.rounds[r]) {
-            this.data.rounds[r] = {};
+        if(!ScoreManager.data.rounds[r]) {
+            ScoreManager.data.rounds[r] = {};
         }
 
-        if(!this.data.rounds[r].primary) {
-            this.data.rounds[r].primary = 0;
+        if(!ScoreManager.data.rounds[r].primary) {
+            ScoreManager.data.rounds[r].primary = 0;
         }
 
-        if(!this.data.rounds[r].secondary) {
-            this.data.rounds[r].secondary = 0;
+        if(!ScoreManager.data.rounds[r].secondary) {
+            ScoreManager.data.rounds[r].secondary = 0;
         }
     }
 
     static EnsureCP() {
-        this.EnsureData();
+        ScoreManager.EnsureData();
 
-        if(!this.data.cp) {
-            this.data.cp = 0;
+        if(!ScoreManager.data.cp) {
+            ScoreManager.data.cp = 0;
         }
     }
 
     static AddListener(callback) {
-        if(!this.listeners) {
-            this.listeners = [];
+        if(!ScoreManager.listeners) {
+            ScoreManager.listeners = [];
         }
-        this.listeners.push(callback);
+        ScoreManager.listeners.push(callback);
     }
 
     static ClearData() {
-        this.data = {}
-        this.NotifyListeners();
+        ScoreManager.data = {}
+        ScoreManager.NotifyListeners();
     }
 
     static NotifyListeners() {
-        if(this.listeners) {
-            for(let idx in this.listeners) {
-                this.listeners[idx](this.data);
+        if(ScoreManager.listeners) {
+            for(let idx in ScoreManager.listeners) {
+                ScoreManager.listeners[idx](ScoreManager.data);
             }
         }
     }
 
     static ClearListeners() {
-        this.listeners = [];
+        ScoreManager.listeners = [];
     }
 }

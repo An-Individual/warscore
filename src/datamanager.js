@@ -2,14 +2,14 @@ export class DataManager {
     static dataKey = "war-simple";
     static SaveData(data) {
         if(!data) {
-            localStorage.removeItem(this.dataKey);
+            localStorage.removeItem(DataManager.dataKey);
         } else {
-            localStorage.setItem(this.dataKey, JSON.stringify(data))
+            localStorage.setItem(DataManager.dataKey, JSON.stringify(data))
         }
     }
 
     static LoadData() {
-        let raw = localStorage.getItem(this.dataKey);
+        let raw = localStorage.getItem(DataManager.dataKey);
         if(!raw) {
             return;
         }
